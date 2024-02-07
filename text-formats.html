@@ -1,0 +1,452 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Taxonomy</title>
+    <style>
+      fieldset {
+        margin: 50px 0;
+      }
+      legend {
+        font-size: 30px;
+      }
+      .nav {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+
+      /**
+ * Tables.
+ */
+      table {
+        font-size: 0.923em;
+        margin: 0 0 10px;
+        border: 1px solid #bebfb9;
+        width: 100%;
+      }
+      table td,
+      table th {
+        vertical-align: middle;
+        padding: 8px 10px;
+        border: 0;
+        color: #000;
+      }
+      tr.even,
+      tr.odd {
+        border-width: 0 1px 0 1px;
+        border-style: solid;
+        border-color: #bebfb9;
+        background: #f3f4ee;
+      }
+      tr.odd {
+        background: #fff;
+      }
+      tr.drag {
+        background: #fe7;
+      }
+      tr.drag-previous {
+        background: #ffb;
+      }
+      table th {
+        text-transform: uppercase;
+        background: #e1e2dc;
+        font-weight: normal;
+        border-width: 1px;
+        border-style: solid;
+        border-color: #bebfb9;
+        padding: 3px 10px;
+      }
+      table th.active {
+        background: #bdbeb9;
+      }
+      table th a {
+        display: block;
+        position: relative;
+      }
+      table th.active a {
+        padding: 0 25px 0 0; /* LTR */
+      }
+      table th.active img {
+        position: absolute;
+        top: 3px;
+        right: 3px;
+      }
+      table td.active {
+        background: #e9e9dd;
+      }
+      table tr.odd td.active {
+        background: #f3f4ee;
+      }
+      table tr.selected td.active,
+      table tr.selected td {
+        background: #ffc;
+        border-color: #eeb;
+      }
+      table.system-status-report tr {
+        border-bottom: 1px solid #ccc;
+      }
+      table.system-status-report tr.ok {
+        color: #255b1e;
+        background-color: #e5ffe2;
+      }
+      table.system-status-report tr.info {
+        color: #040f37;
+        background-color: #bdf;
+      }
+      table.system-status-report tr.warning {
+        color: #840;
+        background-color: #fffce5;
+      }
+      table.system-status-report tr.error {
+        color: #8c2e0b;
+        background-color: #fef5f1;
+      }
+      /**
+ * Exception for webkit bug with the right border of the last cell
+ * in some tables, since it's webkit only, we can use :last-child
+ */
+      tr td:last-child {
+        border-right: 1px solid #bebfb9;
+      }
+      .element-invisible {
+        position: absolute !important;
+        clip: rect(1px 1px 1px 1px);
+        clip: rect(1px, 1px, 1px, 1px);
+        overflow: hidden;
+        height: 1px;
+      }
+
+      caption {
+        font-size: 20px;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="content" class="clearfix">
+      <div
+        class="nav"
+        style="
+          padding: 50px;
+          background-color: #f1eeee;
+          font-size: 20px;
+          text-align: center;
+        "
+      >
+        <a href="/Drupaltechspecs.html">Module Listing</a
+        ><a href="/permissions.html">Roles &amp; Permissions</a>
+        <a href="/taxonomy.html">Taxonomies</a>
+        <a href="/status-report.html"
+          >Environment Configuration & Integrations</a
+        ><a href="/text-formats.html">Text Formats</a>
+        <a href="/themes.html">Themes</a>
+      </div>
+
+      <div class="region region-content" style="padding: 50px">
+        <table
+          id="text-format-order"
+          class="sticky-enabled tabledrag-processed tableheader-processed sticky-table"
+        >
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Roles</th>
+              <th class="tabledrag-hide" style="display: none">Weight</th>
+              <th colspan="2">Operations</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="draggable odd">
+              <td>Full HTML</td>
+              <td>
+                content author, administrator, agency editor, editor, agency
+                content author, Agency Events Submitter, One City Content
+                Contributors
+              </td>
+              <td class="tabledrag-hide" style="display: none">
+                <div
+                  class="form-item form-type-select form-item-formats-full-html-weight"
+                >
+                  <label
+                    class="element-invisible"
+                    for="edit-formats-full-html-weight"
+                    >Weight for Full HTML
+                  </label>
+                  <select
+                    class="text-format-order-weight form-select"
+                    id="edit-formats-full-html-weight"
+                    name="formats[full_html][weight]"
+                  >
+                    <option value="-10">-10</option>
+                    <option value="-9">-9</option>
+                    <option value="-8">-8</option>
+                    <option value="-7">-7</option>
+                    <option value="-6">-6</option>
+                    <option value="-5">-5</option>
+                    <option value="-4">-4</option>
+                    <option value="-3">-3</option>
+                    <option value="-2">-2</option>
+                    <option value="-1">-1</option>
+                    <option value="0" selected="selected">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                  </select>
+                </div>
+              </td>
+              <td>
+                <a
+                  href="/admin/config/content/formats/full_html"
+                  id="edit-formats-full-html-configure"
+                  >configure</a
+                >
+              </td>
+              <td>
+                <a
+                  href="/admin/config/content/formats/full_html/disable"
+                  id="edit-formats-full-html-disable"
+                  >disable</a
+                >
+              </td>
+            </tr>
+            <tr class="draggable even">
+              <td>Filtered HTML</td>
+              <td>
+                content author, authenticated user, administrator, agency
+                editor, editor, agency content author, One City Content
+                Contributors
+              </td>
+              <td class="tabledrag-hide" style="display: none">
+                <div
+                  class="form-item form-type-select form-item-formats-filtered-html-weight"
+                >
+                  <label
+                    class="element-invisible"
+                    for="edit-formats-filtered-html-weight"
+                    >Weight for Filtered HTML
+                  </label>
+                  <select
+                    class="text-format-order-weight form-select"
+                    id="edit-formats-filtered-html-weight"
+                    name="formats[filtered_html][weight]"
+                  >
+                    <option value="-10">-10</option>
+                    <option value="-9">-9</option>
+                    <option value="-8">-8</option>
+                    <option value="-7">-7</option>
+                    <option value="-6">-6</option>
+                    <option value="-5">-5</option>
+                    <option value="-4">-4</option>
+                    <option value="-3">-3</option>
+                    <option value="-2">-2</option>
+                    <option value="-1">-1</option>
+                    <option value="0">0</option>
+                    <option value="1" selected="selected">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                  </select>
+                </div>
+              </td>
+              <td>
+                <a
+                  href="/admin/config/content/formats/filtered_html"
+                  id="edit-formats-filtered-html-configure"
+                  >configure</a
+                >
+              </td>
+              <td>
+                <a
+                  href="/admin/config/content/formats/filtered_html/disable"
+                  id="edit-formats-filtered-html-disable"
+                  >disable</a
+                >
+              </td>
+            </tr>
+            <tr class="draggable odd">
+              <td>
+                <em class="placeholder">Plain text</em>
+              </td>
+              <td>
+                <em class="placeholder">All roles may use this format</em>
+              </td>
+              <td class="tabledrag-hide" style="display: none">
+                <div
+                  class="form-item form-type-select form-item-formats-plain-text-weight"
+                >
+                  <label
+                    class="element-invisible"
+                    for="edit-formats-plain-text-weight"
+                    >Weight for Plain text
+                  </label>
+                  <select
+                    class="text-format-order-weight form-select"
+                    id="edit-formats-plain-text-weight"
+                    name="formats[plain_text][weight]"
+                  >
+                    <option value="-10">-10</option>
+                    <option value="-9">-9</option>
+                    <option value="-8">-8</option>
+                    <option value="-7">-7</option>
+                    <option value="-6">-6</option>
+                    <option value="-5">-5</option>
+                    <option value="-4">-4</option>
+                    <option value="-3">-3</option>
+                    <option value="-2">-2</option>
+                    <option value="-1">-1</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9" selected="selected">9</option>
+                    <option value="10">10</option>
+                  </select>
+                </div>
+              </td>
+              <td>
+                <a
+                  href="/admin/config/content/formats/plain_text"
+                  id="edit-formats-plain-text-configure"
+                  >configure</a
+                >
+              </td>
+              <td></td>
+            </tr>
+            <tr class="draggable even">
+              <td>Display Suite code</td>
+              <td>administrator</td>
+              <td class="tabledrag-hide" style="display: none">
+                <div
+                  class="form-item form-type-select form-item-formats-ds-code-weight"
+                >
+                  <label
+                    class="element-invisible"
+                    for="edit-formats-ds-code-weight"
+                    >Weight for Display Suite code
+                  </label>
+                  <select
+                    class="text-format-order-weight form-select"
+                    id="edit-formats-ds-code-weight"
+                    name="formats[ds_code][weight]"
+                  >
+                    <option value="-10">-10</option>
+                    <option value="-9">-9</option>
+                    <option value="-8">-8</option>
+                    <option value="-7">-7</option>
+                    <option value="-6">-6</option>
+                    <option value="-5">-5</option>
+                    <option value="-4">-4</option>
+                    <option value="-3">-3</option>
+                    <option value="-2">-2</option>
+                    <option value="-1">-1</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10" selected="selected">10</option>
+                  </select>
+                </div>
+              </td>
+              <td>
+                <a
+                  href="/admin/config/content/formats/ds_code"
+                  id="edit-formats-ds-code-configure"
+                  >configure</a
+                >
+              </td>
+              <td>
+                <a
+                  href="/admin/config/content/formats/ds_code/disable"
+                  id="edit-formats-ds-code-disable"
+                  >disable</a
+                >
+              </td>
+            </tr>
+            <tr class="draggable odd">
+              <td>PHP code</td>
+              <td>administrator</td>
+              <td class="tabledrag-hide" style="display: none">
+                <div
+                  class="form-item form-type-select form-item-formats-php-code-weight"
+                >
+                  <label
+                    class="element-invisible"
+                    for="edit-formats-php-code-weight"
+                    >Weight for PHP code
+                  </label>
+                  <select
+                    class="text-format-order-weight form-select"
+                    id="edit-formats-php-code-weight"
+                    name="formats[php_code][weight]"
+                  >
+                    <option value="-10">-10</option>
+                    <option value="-9">-9</option>
+                    <option value="-8">-8</option>
+                    <option value="-7">-7</option>
+                    <option value="-6">-6</option>
+                    <option value="-5">-5</option>
+                    <option value="-4">-4</option>
+                    <option value="-3">-3</option>
+                    <option value="-2">-2</option>
+                    <option value="-1">-1</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11" selected="selected">11</option>
+                  </select>
+                </div>
+              </td>
+              <td>
+                <a
+                  href="/admin/config/content/formats/php_code"
+                  id="edit-formats-php-code-configure"
+                  >configure</a
+                >
+              </td>
+              <td>
+                <a
+                  href="/admin/config/content/formats/php_code/disable"
+                  id="edit-formats-php-code-disable"
+                  >disable</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

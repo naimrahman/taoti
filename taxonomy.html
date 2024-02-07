@@ -1,0 +1,2157 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Taxonomy</title>
+    <style>
+      fieldset {
+        margin: 50px 0;
+      }
+      legend {
+        font-size: 30px;
+      }
+      .nav {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+
+      /**
+ * Tables.
+ */
+      table {
+        width: 100%;
+        font-size: 0.923em;
+        margin: 0 0 10px;
+        border: 1px solid #bebfb9;
+        margin: 50px;
+      }
+      table td,
+      table th {
+        vertical-align: middle;
+        padding: 8px 10px;
+        border: 0;
+        color: #000;
+      }
+      tr.even,
+      tr.odd {
+        border-width: 0 1px 0 1px;
+        border-style: solid;
+        border-color: #bebfb9;
+        background: #f3f4ee;
+      }
+      tr.odd {
+        background: #fff;
+      }
+      tr.drag {
+        background: #fe7;
+      }
+      tr.drag-previous {
+        background: #ffb;
+      }
+      table th {
+        text-transform: uppercase;
+        background: #e1e2dc;
+        font-weight: normal;
+        border-width: 1px;
+        border-style: solid;
+        border-color: #bebfb9;
+        padding: 3px 10px;
+      }
+      table th.active {
+        background: #bdbeb9;
+      }
+      table th a {
+        display: block;
+        position: relative;
+      }
+      table th.active a {
+        padding: 0 25px 0 0; /* LTR */
+      }
+      table th.active img {
+        position: absolute;
+        top: 3px;
+        right: 3px;
+      }
+      table td.active {
+        background: #e9e9dd;
+      }
+      table tr.odd td.active {
+        background: #f3f4ee;
+      }
+      table tr.selected td.active,
+      table tr.selected td {
+        background: #ffc;
+        border-color: #eeb;
+      }
+      table.system-status-report tr {
+        border-bottom: 1px solid #ccc;
+      }
+      table.system-status-report tr.ok {
+        color: #255b1e;
+        background-color: #e5ffe2;
+      }
+      table.system-status-report tr.info {
+        color: #040f37;
+        background-color: #bdf;
+      }
+      table.system-status-report tr.warning {
+        color: #840;
+        background-color: #fffce5;
+      }
+      table.system-status-report tr.error {
+        color: #8c2e0b;
+        background-color: #fef5f1;
+      }
+      /**
+ * Exception for webkit bug with the right border of the last cell
+ * in some tables, since it's webkit only, we can use :last-child
+ */
+      tr td:last-child {
+        border-right: 1px solid #bebfb9;
+      }
+      .element-invisible {
+        position: absolute !important;
+        clip: rect(1px 1px 1px 1px);
+        clip: rect(1px, 1px, 1px, 1px);
+        overflow: hidden;
+        height: 1px;
+      }
+
+      caption {
+        font-size: 20px;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="content" class="clearfix">
+      <div
+        class="nav"
+        style="
+          padding: 50px;
+          background-color: #f1eeee;
+          font-size: 20px;
+          text-align: center;
+        "
+      >
+        <a href="/Drupaltechspecs.html">Module Listing</a
+        ><a href="/permissions.html">Roles &amp; Permissions</a>
+        <a href="/taxonomy.html">Taxonomies</a>
+        <a href="/status-report.html"
+          >Environment Configuration & Integrations</a
+        ><a href="/text-formats.html">Text Formats</a>
+        <a href="/themes.html">Themes</a>
+      </div>
+
+      <div class="region region-content" style="padding: 50px">
+        <div
+          class="view view-system-taxonomy-terms view-id-system_taxonomy_terms view-display-id-page view-dom-id-5ca90c10b44cf07cff80763df1847389"
+        >
+          <div class="view-content">
+            <table class="views-table cols-2">
+              <caption>
+                Vocabulary Name: Agency Name
+              </caption>
+              <thead>
+                <tr>
+                  <th class="views-field views-field-name-2" scope="col">
+                    Vocabulary Name
+                  </th>
+                  <th class="views-field views-field-name" scope="col">
+                    Taxonomy Term Name
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="odd views-row-first">
+                  <td class="views-field views-field-name-2">Agency Name</td>
+                  <td class="views-field views-field-name">DDOT</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">Agency Name</td>
+                  <td class="views-field views-field-name">DDS</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">Agency Name</td>
+                  <td class="views-field views-field-name">DME</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">Agency Name</td>
+                  <td class="views-field views-field-name">Health Reform</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">Agency Name</td>
+                  <td class="views-field views-field-name">OCT</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">Agency Name</td>
+                  <td class="views-field views-field-name">OCTO</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">Agency Name</td>
+                  <td class="views-field views-field-name">OLMP</td>
+                </tr>
+                <tr class="even views-row-last">
+                  <td class="views-field views-field-name-2">Agency Name</td>
+                  <td class="views-field views-field-name">OP</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="views-table cols-2">
+              <caption>
+                Vocabulary Name: Audience
+              </caption>
+              <thead>
+                <tr>
+                  <th class="views-field views-field-name-2" scope="col">
+                    Vocabulary Name
+                  </th>
+                  <th class="views-field views-field-name" scope="col">
+                    Taxonomy Term Name
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">Audience</td>
+                  <td class="views-field views-field-name">Parents</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">Audience</td>
+                  <td class="views-field views-field-name">Providers</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">Audience</td>
+                  <td class="views-field views-field-name">Renters</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">Audience</td>
+                  <td class="views-field views-field-name">Seniors</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">Audience</td>
+                  <td class="views-field views-field-name">Small Businesses</td>
+                </tr>
+                <tr class="even views-row-last">
+                  <td class="views-field views-field-name-2">Audience</td>
+                  <td class="views-field views-field-name">Students</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">Audience</td>
+                  <td class="views-field views-field-name">Vendors</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">Audience</td>
+                  <td class="views-field views-field-name">Visitors</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">Audience</td>
+                  <td class="views-field views-field-name">Volunteers</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">Audience</td>
+                  <td class="views-field views-field-name">
+                    District Employees
+                  </td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">Audience</td>
+                  <td class="views-field views-field-name">Educators</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">Audience</td>
+                  <td class="views-field views-field-name">Homeowners</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">Audience</td>
+                  <td class="views-field views-field-name">Non-Profits</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="views-table cols-2">
+              <caption>
+                Vocabulary Name: Biography Type
+              </caption>
+              <thead>
+                <tr>
+                  <th class="views-field views-field-name-2" scope="col">
+                    Vocabulary Name
+                  </th>
+                  <th class="views-field views-field-name" scope="col">
+                    Taxonomy Term Name
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">Biography Type</td>
+                  <td class="views-field views-field-name">ATV Offender</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">Biography Type</td>
+                  <td class="views-field views-field-name">Biography</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">Biography Type</td>
+                  <td class="views-field views-field-name">Missing Person</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="views-table cols-2">
+              <caption>
+                Vocabulary Name: Custom Display Terms
+              </caption>
+              <thead>
+                <tr>
+                  <th class="views-field views-field-name-2" scope="col">
+                    Vocabulary Name
+                  </th>
+                  <th class="views-field views-field-name" scope="col">
+                    Taxonomy Term Name
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    Custom Display Terms
+                  </td>
+                  <td class="views-field views-field-name">1 - Column</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    Custom Display Terms
+                  </td>
+                  <td class="views-field views-field-name">2 - Column</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    Custom Display Terms
+                  </td>
+                  <td class="views-field views-field-name">
+                    Default - 3 - Column
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="views-table cols-2">
+              <caption>
+                Vocabulary Name: Customer Service 311 Type
+              </caption>
+              <thead>
+                <tr>
+                  <th class="views-field views-field-name-2" scope="col">
+                    Vocabulary Name
+                  </th>
+                  <th class="views-field views-field-name" scope="col">
+                    Taxonomy Term Name
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    Customer Service 311 Type
+                  </td>
+                  <td class="views-field views-field-name">
+                    Customer Service 311
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="views-table cols-2">
+              <caption>
+                Vocabulary Name: Disclaimer Type
+              </caption>
+              <thead>
+                <tr>
+                  <th class="views-field views-field-name-2" scope="col">
+                    Vocabulary Name
+                  </th>
+                  <th class="views-field views-field-name" scope="col">
+                    Taxonomy Term Name
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    Disclaimer Type
+                  </td>
+                  <td class="views-field views-field-name">
+                    Excel Disclaimer [XLS]
+                  </td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    Disclaimer Type
+                  </td>
+                  <td class="views-field views-field-name">
+                    MSWord Disclaimer [DOC]
+                  </td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    Disclaimer Type
+                  </td>
+                  <td class="views-field views-field-name">
+                    PDF Disclaimer [PDF]
+                  </td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    Disclaimer Type
+                  </td>
+                  <td class="views-field views-field-name">
+                    Powerpoint Disclaimer [PPT]
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="views-table cols-2">
+              <caption>
+                Vocabulary Name: Emergency Types
+              </caption>
+              <thead>
+                <tr>
+                  <th class="views-field views-field-name-2" scope="col">
+                    Vocabulary Name
+                  </th>
+                  <th class="views-field views-field-name" scope="col">
+                    Taxonomy Term Name
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    Emergency Types
+                  </td>
+                  <td class="views-field views-field-name">Agency Closure</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    Emergency Types
+                  </td>
+                  <td class="views-field views-field-name">Emergency Alert</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    Emergency Types
+                  </td>
+                  <td class="views-field views-field-name">
+                    Government-wide Closure
+                  </td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    Emergency Types
+                  </td>
+                  <td class="views-field views-field-name">Library Closure</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    Emergency Types
+                  </td>
+                  <td class="views-field views-field-name">
+                    Park &amp; Recreation Center Closure
+                  </td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    Emergency Types
+                  </td>
+                  <td class="views-field views-field-name">School Closure</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    Emergency Types
+                  </td>
+                  <td class="views-field views-field-name">Street Closure</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="views-table cols-2">
+              <caption>
+                Vocabulary Name: Event Type
+              </caption>
+              <thead>
+                <tr>
+                  <th class="views-field views-field-name-2" scope="col">
+                    Vocabulary Name
+                  </th>
+                  <th class="views-field views-field-name" scope="col">
+                    Taxonomy Term Name
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">Event Type</td>
+                  <td class="views-field views-field-name">Conference/Forum</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">Event Type</td>
+                  <td class="views-field views-field-name">Daily Schedule</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">Event Type</td>
+                  <td class="views-field views-field-name">Exhibit</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">Event Type</td>
+                  <td class="views-field views-field-name">Fair/Exposition</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">Event Type</td>
+                  <td class="views-field views-field-name">Festival</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">Event Type</td>
+                  <td class="views-field views-field-name">Hearing</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">Event Type</td>
+                  <td class="views-field views-field-name">Lecture/Seminar</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">Event Type</td>
+                  <td class="views-field views-field-name">
+                    Marathon/Run/Walk
+                  </td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">Event Type</td>
+                  <td class="views-field views-field-name">Meeting</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">Event Type</td>
+                  <td class="views-field views-field-name">
+                    Observance/Holiday
+                  </td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">Event Type</td>
+                  <td class="views-field views-field-name">Parade</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">Event Type</td>
+                  <td class="views-field views-field-name">
+                    Performance/Screening
+                  </td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">Event Type</td>
+                  <td class="views-field views-field-name">Press Conference</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">Event Type</td>
+                  <td class="views-field views-field-name">Recreation</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">Event Type</td>
+                  <td class="views-field views-field-name">
+                    Solicitation/Application
+                  </td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">Event Type</td>
+                  <td class="views-field views-field-name">
+                    Training/Class/Exam
+                  </td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">Event Type</td>
+                  <td class="views-field views-field-name">
+                    Volunteer Opportunity
+                  </td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">Event Type</td>
+                  <td class="views-field views-field-name">Broadcast</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">Event Type</td>
+                  <td class="views-field views-field-name">
+                    Celebration/Party
+                  </td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">Event Type</td>
+                  <td class="views-field views-field-name">Ceremony</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">Event Type</td>
+                  <td class="views-field views-field-name">Closure</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">Event Type</td>
+                  <td class="views-field views-field-name">
+                    Collection/Drop-off
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="views-table cols-2">
+              <caption>
+                Vocabulary Name: External Link
+              </caption>
+              <thead>
+                <tr>
+                  <th class="views-field views-field-name-2" scope="col">
+                    Vocabulary Name
+                  </th>
+                  <th class="views-field views-field-name" scope="col">
+                    Taxonomy Term Name
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">External Link</td>
+                  <td class="views-field views-field-name">DC Mobile Apps</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">External Link</td>
+                  <td class="views-field views-field-name">
+                    DC.gov Website URL
+                  </td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">External Link</td>
+                  <td class="views-field views-field-name">In the News</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">External Link</td>
+                  <td class="views-field views-field-name">Online Service</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">External Link</td>
+                  <td class="views-field views-field-name">Open Text Link</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">External Link</td>
+                  <td class="views-field views-field-name">
+                    Related Website URL
+                  </td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">External Link</td>
+                  <td class="views-field views-field-name">Social Media URL</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="views-table cols-2">
+              <caption>
+                Vocabulary Name: Featured Content Type
+              </caption>
+              <thead>
+                <tr>
+                  <th class="views-field views-field-name-2" scope="col">
+                    Vocabulary Name
+                  </th>
+                  <th class="views-field views-field-name" scope="col">
+                    Taxonomy Term Name
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    Featured Content Type
+                  </td>
+                  <td class="views-field views-field-name">Blog</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    Featured Content Type
+                  </td>
+                  <td class="views-field views-field-name">
+                    High Resolution Campaign Background
+                  </td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    Featured Content Type
+                  </td>
+                  <td class="views-field views-field-name">Homepage A</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    Featured Content Type
+                  </td>
+                  <td class="views-field views-field-name">Homepage B</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    Featured Content Type
+                  </td>
+                  <td class="views-field views-field-name">Homepage Banner</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    Featured Content Type
+                  </td>
+                  <td class="views-field views-field-name">Homepage C</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    Featured Content Type
+                  </td>
+                  <td class="views-field views-field-name">
+                    Homepage Carousel
+                  </td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    Featured Content Type
+                  </td>
+                  <td class="views-field views-field-name">Homepage D</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    Featured Content Type
+                  </td>
+                  <td class="views-field views-field-name">Homepage Tiles</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    Featured Content Type
+                  </td>
+                  <td class="views-field views-field-name">Interior 1</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    Featured Content Type
+                  </td>
+                  <td class="views-field views-field-name">Interior 2</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    Featured Content Type
+                  </td>
+                  <td class="views-field views-field-name">Interior 3</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    Featured Content Type
+                  </td>
+                  <td class="views-field views-field-name">Interior 4</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="views-table cols-2">
+              <caption>
+                Vocabulary Name: FOIA Type
+              </caption>
+              <thead>
+                <tr>
+                  <th class="views-field views-field-name-2" scope="col">
+                    Vocabulary Name
+                  </th>
+                  <th class="views-field views-field-name" scope="col">
+                    Taxonomy Term Name
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">FOIA Type</td>
+                  <td class="views-field views-field-name">
+                    Administrative staff manuals and instructions to staff that
+                    affect a member of the public
+                  </td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">FOIA Type</td>
+                  <td class="views-field views-field-name">
+                    Final opinions, including concurring and dissenting
+                    opinions, as well as orders, made in the adjudication of
+                    cases
+                  </td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">FOIA Type</td>
+                  <td class="views-field views-field-name">Not FOIA</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">FOIA Type</td>
+                  <td class="views-field views-field-name">Other</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">FOIA Type</td>
+                  <td class="views-field views-field-name">
+                    The minutes of all proceedings of all public bodies
+                  </td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">FOIA Type</td>
+                  <td class="views-field views-field-name">
+                    Those statements of policy and interpretations of policy,
+                    acts, and rules which have been adopted by a public body
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="views-table cols-2">
+              <caption>
+                Vocabulary Name: Missing Case Type
+              </caption>
+              <thead>
+                <tr>
+                  <th class="views-field views-field-name-2" scope="col">
+                    Vocabulary Name
+                  </th>
+                  <th class="views-field views-field-name" scope="col">
+                    Taxonomy Term Name
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    Missing Case Type
+                  </td>
+                  <td class="views-field views-field-name">Critical</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    Missing Case Type
+                  </td>
+                  <td class="views-field views-field-name">Non Critical</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="views-table cols-2">
+              <caption>
+                Vocabulary Name: Missing Person Type
+              </caption>
+              <thead>
+                <tr>
+                  <th class="views-field views-field-name-2" scope="col">
+                    Vocabulary Name
+                  </th>
+                  <th class="views-field views-field-name" scope="col">
+                    Taxonomy Term Name
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    Missing Person Type
+                  </td>
+                  <td class="views-field views-field-name">Adult</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    Missing Person Type
+                  </td>
+                  <td class="views-field views-field-name">Juvenile</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="views-table cols-2">
+              <caption>
+                Vocabulary Name: Missing Status
+              </caption>
+              <thead>
+                <tr>
+                  <th class="views-field views-field-name-2" scope="col">
+                    Vocabulary Name
+                  </th>
+                  <th class="views-field views-field-name" scope="col">
+                    Taxonomy Term Name
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">Missing Status</td>
+                  <td class="views-field views-field-name">Found</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">Missing Status</td>
+                  <td class="views-field views-field-name">Missing</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="views-table cols-2">
+              <caption>
+                Vocabulary Name: Multimedia Types
+              </caption>
+              <thead>
+                <tr>
+                  <th class="views-field views-field-name-2" scope="col">
+                    Vocabulary Name
+                  </th>
+                  <th class="views-field views-field-name" scope="col">
+                    Taxonomy Term Name
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    Multimedia Types
+                  </td>
+                  <td class="views-field views-field-name">
+                    Audio - 1 - Column
+                  </td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    Multimedia Types
+                  </td>
+                  <td class="views-field views-field-name">
+                    Audio - 2 - Column
+                  </td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    Multimedia Types
+                  </td>
+                  <td class="views-field views-field-name">
+                    Audio - 3 - Column
+                  </td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    Multimedia Types
+                  </td>
+                  <td class="views-field views-field-name">
+                    Image - 1 - Column
+                  </td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    Multimedia Types
+                  </td>
+                  <td class="views-field views-field-name">
+                    Image - 2 - Column
+                  </td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    Multimedia Types
+                  </td>
+                  <td class="views-field views-field-name">
+                    Image - 3 - Column
+                  </td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    Multimedia Types
+                  </td>
+                  <td class="views-field views-field-name">
+                    Photo Gallery - 1 - Column
+                  </td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    Multimedia Types
+                  </td>
+                  <td class="views-field views-field-name">
+                    Video - 1 - Column
+                  </td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    Multimedia Types
+                  </td>
+                  <td class="views-field views-field-name">
+                    Video - 2 - Column
+                  </td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    Multimedia Types
+                  </td>
+                  <td class="views-field views-field-name">
+                    Video - 3 - Column
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="views-table cols-2">
+              <caption>
+                Vocabulary Name: OEA Decision Type
+              </caption>
+              <thead>
+                <tr>
+                  <th class="views-field views-field-name-2" scope="col">
+                    Vocabulary Name
+                  </th>
+                  <th class="views-field views-field-name" scope="col">
+                    Taxonomy Term Name
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    OEA Decision Type
+                  </td>
+                  <td class="views-field views-field-name">
+                    Collateral Estoppel
+                  </td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    OEA Decision Type
+                  </td>
+                  <td class="views-field views-field-name">
+                    Probationary Employees
+                  </td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    OEA Decision Type
+                  </td>
+                  <td class="views-field views-field-name">
+                    Compliance Enforcement
+                  </td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    OEA Decision Type
+                  </td>
+                  <td class="views-field views-field-name">
+                    Receivers Authority to Terminate
+                  </td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    OEA Decision Type
+                  </td>
+                  <td class="views-field views-field-name">
+                    Conduct Unbecoming an Officer
+                  </td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    OEA Decision Type
+                  </td>
+                  <td class="views-field views-field-name">
+                    Recusal of an Administrative Judge
+                  </td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    OEA Decision Type
+                  </td>
+                  <td class="views-field views-field-name">
+                    Conviction of a Crime – Felonies
+                  </td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    OEA Decision Type
+                  </td>
+                  <td class="views-field views-field-name">
+                    Reduction in Force (RIF) – Competitive Level Documentation
+                    Form (CLDF)
+                  </td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    OEA Decision Type
+                  </td>
+                  <td class="views-field views-field-name">
+                    Conviction of a Crime – Indictment
+                  </td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    OEA Decision Type
+                  </td>
+                  <td class="views-field views-field-name">
+                    Reduction in Force (RIF) – Pre-RIF
+                  </td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    OEA Decision Type
+                  </td>
+                  <td class="views-field views-field-name">
+                    Conviction of a Crime – Misdemeanors
+                  </td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    OEA Decision Type
+                  </td>
+                  <td class="views-field views-field-name">
+                    Reduction in Rank
+                  </td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    OEA Decision Type
+                  </td>
+                  <td class="views-field views-field-name">
+                    Conviction of a Crime – Probation before Judgment
+                  </td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    OEA Decision Type
+                  </td>
+                  <td class="views-field views-field-name">
+                    Rescinding Retirement
+                  </td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    OEA Decision Type
+                  </td>
+                  <td class="views-field views-field-name">Demotion</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    OEA Decision Type
+                  </td>
+                  <td class="views-field views-field-name">
+                    Sick or Annual Leave Requests – Accommodation
+                  </td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    OEA Decision Type
+                  </td>
+                  <td class="views-field views-field-name">
+                    Sick or Annual Leave Requests – Medical Documentation
+                  </td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    OEA Decision Type
+                  </td>
+                  <td class="views-field views-field-name">
+                    Discourteous Treatment
+                  </td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    OEA Decision Type
+                  </td>
+                  <td class="views-field views-field-name">
+                    Dishonesty or False Statements
+                  </td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    OEA Decision Type
+                  </td>
+                  <td class="views-field views-field-name">
+                    Suspensions – Indefinite
+                  </td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    OEA Decision Type
+                  </td>
+                  <td class="views-field views-field-name">
+                    Disparate Treatment
+                  </td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    OEA Decision Type
+                  </td>
+                  <td class="views-field views-field-name">
+                    Suspensions – Pays Held in Abeyance
+                  </td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    OEA Decision Type
+                  </td>
+                  <td class="views-field views-field-name">Drug Cases</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    OEA Decision Type
+                  </td>
+                  <td class="views-field views-field-name">
+                    Voluntary Retirement
+                  </td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    OEA Decision Type
+                  </td>
+                  <td class="views-field views-field-name">Enforced Leave</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    OEA Decision Type
+                  </td>
+                  <td class="views-field views-field-name">Withdrawal</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    OEA Decision Type
+                  </td>
+                  <td class="views-field views-field-name">
+                    Witness Credibility
+                  </td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    OEA Decision Type
+                  </td>
+                  <td class="views-field views-field-name">
+                    Failure to Defend
+                  </td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    OEA Decision Type
+                  </td>
+                  <td class="views-field views-field-name">
+                    Failure to Prosecute
+                  </td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    OEA Decision Type
+                  </td>
+                  <td class="views-field views-field-name">
+                    Failure to Provide Proper Notice
+                  </td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    OEA Decision Type
+                  </td>
+                  <td class="views-field views-field-name">
+                    Interlocutory Appeals
+                  </td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    OEA Decision Type
+                  </td>
+                  <td class="views-field views-field-name">
+                    Involuntary Retirement
+                  </td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    OEA Decision Type
+                  </td>
+                  <td class="views-field views-field-name">Jurisdiction</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    OEA Decision Type
+                  </td>
+                  <td class="views-field views-field-name">
+                    Leave Without Pay
+                  </td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    OEA Decision Type
+                  </td>
+                  <td class="views-field views-field-name">Malfeasance</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    OEA Decision Type
+                  </td>
+                  <td class="views-field views-field-name">
+                    MPD – 90 Day Rule
+                  </td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    OEA Decision Type
+                  </td>
+                  <td class="views-field views-field-name">
+                    MPD – General Orders
+                  </td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    OEA Decision Type
+                  </td>
+                  <td class="views-field views-field-name">Neglect of Duty</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    OEA Decision Type
+                  </td>
+                  <td class="views-field views-field-name">Negligence</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    OEA Decision Type
+                  </td>
+                  <td class="views-field views-field-name">45 Day Rule</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    OEA Decision Type
+                  </td>
+                  <td class="views-field views-field-name">
+                    Nexus Between Off Duty Conduct and Work Performance
+                  </td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    OEA Decision Type
+                  </td>
+                  <td class="views-field views-field-name">55 Day Rule</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    OEA Decision Type
+                  </td>
+                  <td class="views-field views-field-name">
+                    On Duty or Employment Related Act
+                  </td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    OEA Decision Type
+                  </td>
+                  <td class="views-field views-field-name">90 Day Rule</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    OEA Decision Type
+                  </td>
+                  <td class="views-field views-field-name">Other</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    OEA Decision Type
+                  </td>
+                  <td class="views-field views-field-name">
+                    Attorney Fees – Interest of Justice
+                  </td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    OEA Decision Type
+                  </td>
+                  <td class="views-field views-field-name">Penalty</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    OEA Decision Type
+                  </td>
+                  <td class="views-field views-field-name">AWOL</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    OEA Decision Type
+                  </td>
+                  <td class="views-field views-field-name">
+                    Performance Evaluation
+                  </td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    OEA Decision Type
+                  </td>
+                  <td class="views-field views-field-name">Back Pay</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    OEA Decision Type
+                  </td>
+                  <td class="views-field views-field-name">Pinkard Cases</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="views-table cols-2">
+              <caption>
+                Vocabulary Name: Page Type
+              </caption>
+              <thead>
+                <tr>
+                  <th class="views-field views-field-name-2" scope="col">
+                    Vocabulary Name
+                  </th>
+                  <th class="views-field views-field-name" scope="col">
+                    Taxonomy Term Name
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">Page Type</td>
+                  <td class="views-field views-field-name">Program</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">Page Type</td>
+                  <td class="views-field views-field-name">Project</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="views-table cols-2">
+              <caption>
+                Vocabulary Name: Police Service Area
+              </caption>
+              <thead>
+                <tr>
+                  <th class="views-field views-field-name-2" scope="col">
+                    Vocabulary Name
+                  </th>
+                  <th class="views-field views-field-name" scope="col">
+                    Taxonomy Term Name
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    Police Service Area
+                  </td>
+                  <td class="views-field views-field-name">Fifth District</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    Police Service Area
+                  </td>
+                  <td class="views-field views-field-name">First District</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    Police Service Area
+                  </td>
+                  <td class="views-field views-field-name">Fourth District</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    Police Service Area
+                  </td>
+                  <td class="views-field views-field-name">Second District</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    Police Service Area
+                  </td>
+                  <td class="views-field views-field-name">Seventh District</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    Police Service Area
+                  </td>
+                  <td class="views-field views-field-name">Sixth District</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    Police Service Area
+                  </td>
+                  <td class="views-field views-field-name">Third District</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="views-table cols-2">
+              <caption>
+                Vocabulary Name: Publication and Page Type
+              </caption>
+              <thead>
+                <tr>
+                  <th class="views-field views-field-name-2" scope="col">
+                    Vocabulary Name
+                  </th>
+                  <th class="views-field views-field-name" scope="col">
+                    Taxonomy Term Name
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    Publication and Page Type
+                  </td>
+                  <td class="views-field views-field-name">Abstract</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    Publication and Page Type
+                  </td>
+                  <td class="views-field views-field-name">Budget</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    Publication and Page Type
+                  </td>
+                  <td class="views-field views-field-name">Bulletin</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    Publication and Page Type
+                  </td>
+                  <td class="views-field views-field-name">Decision</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    Publication and Page Type
+                  </td>
+                  <td class="views-field views-field-name">
+                    Downloadable Form
+                  </td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    Publication and Page Type
+                  </td>
+                  <td class="views-field views-field-name">Flyer/Poster</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    Publication and Page Type
+                  </td>
+                  <td class="views-field views-field-name">Legislation</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    Publication and Page Type
+                  </td>
+                  <td class="views-field views-field-name">Letter</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    Publication and Page Type
+                  </td>
+                  <td class="views-field views-field-name">Manual/Guide</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    Publication and Page Type
+                  </td>
+                  <td class="views-field views-field-name">Map</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    Publication and Page Type
+                  </td>
+                  <td class="views-field views-field-name">Minutes</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    Publication and Page Type
+                  </td>
+                  <td class="views-field views-field-name">Order</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    Publication and Page Type
+                  </td>
+                  <td class="views-field views-field-name">Policy</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    Publication and Page Type
+                  </td>
+                  <td class="views-field views-field-name">Recommendation</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    Publication and Page Type
+                  </td>
+                  <td class="views-field views-field-name">Regulation</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    Publication and Page Type
+                  </td>
+                  <td class="views-field views-field-name">Report</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    Publication and Page Type
+                  </td>
+                  <td class="views-field views-field-name">Solicitation</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    Publication and Page Type
+                  </td>
+                  <td class="views-field views-field-name">Transmittal</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="views-table cols-2">
+              <caption>
+                Vocabulary Name: Release Type
+              </caption>
+              <thead>
+                <tr>
+                  <th class="views-field views-field-name-2" scope="col">
+                    Vocabulary Name
+                  </th>
+                  <th class="views-field views-field-name" scope="col">
+                    Taxonomy Term Name
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">Release Type</td>
+                  <td class="views-field views-field-name">
+                    Letters from the Mayor
+                  </td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">Release Type</td>
+                  <td class="views-field views-field-name">News</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">Release Type</td>
+                  <td class="views-field views-field-name">Newsletter</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">Release Type</td>
+                  <td class="views-field views-field-name">Press Release</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">Release Type</td>
+                  <td class="views-field views-field-name">Statement</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">Release Type</td>
+                  <td class="views-field views-field-name">Testimony</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">Release Type</td>
+                  <td class="views-field views-field-name">Advisory</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">Release Type</td>
+                  <td class="views-field views-field-name">Job Announcement</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="views-table cols-2">
+              <caption>
+                Vocabulary Name: Service type
+              </caption>
+              <thead>
+                <tr>
+                  <th class="views-field views-field-name-2" scope="col">
+                    Vocabulary Name
+                  </th>
+                  <th class="views-field views-field-name" scope="col">
+                    Taxonomy Term Name
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">Service type</td>
+                  <td class="views-field views-field-name">Service</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">Service type</td>
+                  <td class="views-field views-field-name">Service Details</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">Service type</td>
+                  <td class="views-field views-field-name">Sub-service</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="views-table cols-2">
+              <caption>
+                Vocabulary Name: Social Media Type
+              </caption>
+              <thead>
+                <tr>
+                  <th class="views-field views-field-name-2" scope="col">
+                    Vocabulary Name
+                  </th>
+                  <th class="views-field views-field-name" scope="col">
+                    Taxonomy Term Name
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    Social Media Type
+                  </td>
+                  <td class="views-field views-field-name">technorati</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    Social Media Type
+                  </td>
+                  <td class="views-field views-field-name">tumblr</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    Social Media Type
+                  </td>
+                  <td class="views-field views-field-name">twitter</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    Social Media Type
+                  </td>
+                  <td class="views-field views-field-name">vimeo</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    Social Media Type
+                  </td>
+                  <td class="views-field views-field-name">wordpress</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    Social Media Type
+                  </td>
+                  <td class="views-field views-field-name">youtube</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    Social Media Type
+                  </td>
+                  <td class="views-field views-field-name">blog</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    Social Media Type
+                  </td>
+                  <td class="views-field views-field-name">blogger</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    Social Media Type
+                  </td>
+                  <td class="views-field views-field-name">chat</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    Social Media Type
+                  </td>
+                  <td class="views-field views-field-name">delicious</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    Social Media Type
+                  </td>
+                  <td class="views-field views-field-name">design-float</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    Social Media Type
+                  </td>
+                  <td class="views-field views-field-name">digg</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    Social Media Type
+                  </td>
+                  <td class="views-field views-field-name">email</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    Social Media Type
+                  </td>
+                  <td class="views-field views-field-name">facebook</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    Social Media Type
+                  </td>
+                  <td class="views-field views-field-name">flickr</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    Social Media Type
+                  </td>
+                  <td class="views-field views-field-name">foursquare</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    Social Media Type
+                  </td>
+                  <td class="views-field views-field-name">google</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    Social Media Type
+                  </td>
+                  <td class="views-field views-field-name">google-plus</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    Social Media Type
+                  </td>
+                  <td class="views-field views-field-name">instagram</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    Social Media Type
+                  </td>
+                  <td class="views-field views-field-name">linkedin</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    Social Media Type
+                  </td>
+                  <td class="views-field views-field-name">picasa</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    Social Media Type
+                  </td>
+                  <td class="views-field views-field-name">pinterest</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    Social Media Type
+                  </td>
+                  <td class="views-field views-field-name">podcast</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    Social Media Type
+                  </td>
+                  <td class="views-field views-field-name">reddit</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    Social Media Type
+                  </td>
+                  <td class="views-field views-field-name">rss</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    Social Media Type
+                  </td>
+                  <td class="views-field views-field-name">scribd</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    Social Media Type
+                  </td>
+                  <td class="views-field views-field-name">slideshare</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    Social Media Type
+                  </td>
+                  <td class="views-field views-field-name">stumbleupon</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="views-table cols-2">
+              <caption>
+                Vocabulary Name: System Use Type
+              </caption>
+              <thead>
+                <tr>
+                  <th class="views-field views-field-name-2" scope="col">
+                    Vocabulary Name
+                  </th>
+                  <th class="views-field views-field-name" scope="col">
+                    Taxonomy Term Name
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    System Use Type
+                  </td>
+                  <td class="views-field views-field-name">404 Page</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    System Use Type
+                  </td>
+                  <td class="views-field views-field-name">Custom Footer</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    System Use Type
+                  </td>
+                  <td class="views-field views-field-name">Custom Header</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">
+                    System Use Type
+                  </td>
+                  <td class="views-field views-field-name">RemoteUI</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">
+                    System Use Type
+                  </td>
+                  <td class="views-field views-field-name">
+                    Universal Callout Block
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="views-table cols-2">
+              <caption>
+                Vocabulary Name: Topic
+              </caption>
+              <thead>
+                <tr>
+                  <th class="views-field views-field-name-2" scope="col">
+                    Vocabulary Name
+                  </th>
+                  <th class="views-field views-field-name" scope="col">
+                    Taxonomy Term Name
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">Topic</td>
+                  <td class="views-field views-field-name">
+                    Contracts and procurement
+                  </td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">Topic</td>
+                  <td class="views-field views-field-name">
+                    Data, demographics and maps
+                  </td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">Topic</td>
+                  <td class="views-field views-field-name">
+                    Doing business in DC
+                  </td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">Topic</td>
+                  <td class="views-field views-field-name">
+                    Economic development and planning
+                  </td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">Topic</td>
+                  <td class="views-field views-field-name">
+                    Education and schools
+                  </td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">Topic</td>
+                  <td class="views-field views-field-name">
+                    Emergency preparedness
+                  </td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">Topic</td>
+                  <td class="views-field views-field-name">
+                    Environment and sustainability
+                  </td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">Topic</td>
+                  <td class="views-field views-field-name">
+                    Feedback, complaints and appeals
+                  </td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">Topic</td>
+                  <td class="views-field views-field-name">Government</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">Topic</td>
+                  <td class="views-field views-field-name">
+                    Grants and funding
+                  </td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">Topic</td>
+                  <td class="views-field views-field-name">
+                    Health and human services
+                  </td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">Topic</td>
+                  <td class="views-field views-field-name">
+                    History and tourism
+                  </td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">Topic</td>
+                  <td class="views-field views-field-name">
+                    Housing and property
+                  </td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">Topic</td>
+                  <td class="views-field views-field-name">
+                    Jobs and employment
+                  </td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">Topic</td>
+                  <td class="views-field views-field-name">
+                    Laws, regulations and courts
+                  </td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">Topic</td>
+                  <td class="views-field views-field-name">
+                    Media and communications
+                  </td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">Topic</td>
+                  <td class="views-field views-field-name">
+                    Official documents and records
+                  </td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">Topic</td>
+                  <td class="views-field views-field-name">
+                    Permits, licenses and certifications
+                  </td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">Topic</td>
+                  <td class="views-field views-field-name">Public safety</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">Topic</td>
+                  <td class="views-field views-field-name">
+                    Public works, sanitation and utilities
+                  </td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">Topic</td>
+                  <td class="views-field views-field-name">
+                    Science, technology and innovation
+                  </td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">Topic</td>
+                  <td class="views-field views-field-name">Social services</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">Topic</td>
+                  <td class="views-field views-field-name">
+                    Sports, parks and recreation
+                  </td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">Topic</td>
+                  <td class="views-field views-field-name">
+                    Streets, public places and traffic
+                  </td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">Topic</td>
+                  <td class="views-field views-field-name">
+                    Taxes and payments
+                  </td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">Topic</td>
+                  <td class="views-field views-field-name">
+                    Tickets and fines
+                  </td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">Topic</td>
+                  <td class="views-field views-field-name">
+                    Training and professional certification
+                  </td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">Topic</td>
+                  <td class="views-field views-field-name">Arts and culture</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">Topic</td>
+                  <td class="views-field views-field-name">
+                    Transportation and motor vehicles
+                  </td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">Topic</td>
+                  <td class="views-field views-field-name">
+                    Budget and finance
+                  </td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">Topic</td>
+                  <td class="views-field views-field-name">
+                    Children and youth services
+                  </td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">Topic</td>
+                  <td class="views-field views-field-name">
+                    Community relations
+                  </td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">Topic</td>
+                  <td class="views-field views-field-name">
+                    Consumer protection
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="views-table cols-2">
+              <caption>
+                Vocabulary Name: Ward
+              </caption>
+              <thead>
+                <tr>
+                  <th class="views-field views-field-name-2" scope="col">
+                    Vocabulary Name
+                  </th>
+                  <th class="views-field views-field-name" scope="col">
+                    Taxonomy Term Name
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">Ward</td>
+                  <td class="views-field views-field-name">Ward 1</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">Ward</td>
+                  <td class="views-field views-field-name">Ward 2</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">Ward</td>
+                  <td class="views-field views-field-name">Ward 3</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">Ward</td>
+                  <td class="views-field views-field-name">Ward 4</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">Ward</td>
+                  <td class="views-field views-field-name">Ward 5</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">Ward</td>
+                  <td class="views-field views-field-name">Ward 6</td>
+                </tr>
+                <tr class="odd">
+                  <td class="views-field views-field-name-2">Ward</td>
+                  <td class="views-field views-field-name">Ward 7</td>
+                </tr>
+                <tr class="even">
+                  <td class="views-field views-field-name-2">Ward</td>
+                  <td class="views-field views-field-name">Ward 8</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

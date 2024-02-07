@@ -1,0 +1,571 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Taxonomy</title>
+    <style>
+      fieldset {
+        margin: 50px 0;
+      }
+      legend {
+        font-size: 30px;
+      }
+      .nav {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+
+      /**
+ * Tables.
+ */
+      table {
+        font-size: 0.923em;
+        margin: 0 0 10px;
+        border: 1px solid #bebfb9;
+        width: 100%;
+      }
+      table td,
+      table th {
+        vertical-align: middle;
+        padding: 8px 10px;
+        border: 0;
+        color: #000;
+      }
+      tr.even,
+      tr.odd {
+        border-width: 0 1px 0 1px;
+        border-style: solid;
+        border-color: #bebfb9;
+        background: #f3f4ee;
+      }
+      tr.odd {
+        background: #fff;
+      }
+      tr.drag {
+        background: #fe7;
+      }
+      tr.drag-previous {
+        background: #ffb;
+      }
+      table th {
+        text-transform: uppercase;
+        background: #e1e2dc;
+        font-weight: normal;
+        border-width: 1px;
+        border-style: solid;
+        border-color: #bebfb9;
+        padding: 3px 10px;
+      }
+      table th.active {
+        background: #bdbeb9;
+      }
+      table th a {
+        display: block;
+        position: relative;
+      }
+      table th.active a {
+        padding: 0 25px 0 0; /* LTR */
+      }
+      table th.active img {
+        position: absolute;
+        top: 3px;
+        right: 3px;
+      }
+      table td.active {
+        background: #e9e9dd;
+      }
+      table tr.odd td.active {
+        background: #f3f4ee;
+      }
+      table tr.selected td.active,
+      table tr.selected td {
+        background: #ffc;
+        border-color: #eeb;
+      }
+      table.system-status-report tr {
+        border-bottom: 1px solid #ccc;
+      }
+      table.system-status-report tr.ok {
+        color: #255b1e;
+        background-color: #e5ffe2;
+      }
+      table.system-status-report tr.info {
+        color: #040f37;
+        background-color: #bdf;
+      }
+      table.system-status-report tr.warning {
+        color: #840;
+        background-color: #fffce5;
+      }
+      table.system-status-report tr.error {
+        color: #8c2e0b;
+        background-color: #fef5f1;
+      }
+      /**
+ * Exception for webkit bug with the right border of the last cell
+ * in some tables, since it's webkit only, we can use :last-child
+ */
+      tr td:last-child {
+        border-right: 1px solid #bebfb9;
+      }
+      .element-invisible {
+        position: absolute !important;
+        clip: rect(1px 1px 1px 1px);
+        clip: rect(1px, 1px, 1px, 1px);
+        overflow: hidden;
+        height: 1px;
+      }
+
+      caption {
+        font-size: 20px;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="content" class="clearfix">
+      <div
+        class="nav"
+        style="
+          padding: 50px;
+          background-color: #f1eeee;
+          font-size: 20px;
+          text-align: center;
+        "
+      >
+        <a href="/Drupaltechspecs.html">Module Listing</a
+        ><a href="/permissions.html">Roles &amp; Permissions</a>
+        <a href="/taxonomy.html">Taxonomies</a>
+        <a href="/status-report.html"
+          >Environment Configuration & Integrations</a
+        ><a href="/text-formats.html">Text Formats</a>
+        <a href="/themes.html">Themes</a>
+      </div>
+
+      <div class="region region-content" style="padding: 50px">
+        <table class="sticky-enabled tableheader-processed sticky-table">
+          <thead>
+            <tr>
+              <th>Screenshot</th>
+              <th>Theme</th>
+              <th>Default</th>
+              <th>Options</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="odd">
+              <td>
+                <img
+                  typeof="foaf:Image"
+                  src="https://config.dc.gov/themes/bartik/screenshot.png"
+                  alt=""
+                />
+              </td>
+              <td>
+                <h3>Bartik 7.82</h3>
+                A flexible, recolorable theme with many regions.
+              </td>
+              <td>
+                <div class="form-item form-type-radio form-item-theme">
+                  <input
+                    type="radio"
+                    id="edit-theme--2"
+                    name="theme"
+                    value="bartik"
+                    class="form-radio"
+                  />
+                </div>
+              </td>
+              <td>
+                <a
+                  href="/admin/structure/domain/view/1192/theme/bartik/theme-settings"
+                ></a>
+              </td>
+            </tr>
+            <tr class="even">
+              <td>
+                <img
+                  typeof="foaf:Image"
+                  src="https://config.dc.gov/sites/all/themes/dc_agency/screenshot.png"
+                  alt=""
+                />
+              </td>
+              <td>
+                <h3>dc_agency 7.2</h3>
+                DC agency theme.
+              </td>
+              <td>
+                <div class="form-item form-type-radio form-item-theme">
+                  <input
+                    type="radio"
+                    id="edit-theme--3"
+                    name="theme"
+                    value="dc_agency"
+                    class="form-radio"
+                  />
+                </div>
+              </td>
+              <td>
+                <a
+                  href="/admin/structure/domain/view/1192/theme/dc_agency/theme-settings"
+                ></a>
+              </td>
+            </tr>
+            <tr class="odd">
+              <td>
+                <img
+                  typeof="foaf:Image"
+                  src="https://config.dc.gov/sites/all/themes/dc_agency_bluesteel/bluesteel.png"
+                  alt=""
+                />
+              </td>
+              <td>
+                <h3>dc_agency_bluesteel</h3>
+                Responsive theme for MPD Missing Persons
+              </td>
+              <td>
+                <div class="form-item form-type-radio form-item-theme">
+                  <input
+                    type="radio"
+                    id="edit-theme--4"
+                    name="theme"
+                    value="dc_agency_bluesteel"
+                    class="form-radio"
+                  />
+                </div>
+              </td>
+              <td>
+                <a
+                  href="/admin/structure/domain/view/1192/theme/dc_agency_bluesteel/theme-settings"
+                ></a>
+              </td>
+            </tr>
+            <tr class="even">
+              <td>
+                <img
+                  typeof="foaf:Image"
+                  src="https://config.dc.gov/sites/all/themes/dc_agency_campaign/screenshot.png"
+                  alt=""
+                />
+              </td>
+              <td>
+                <h3>dc_agency_campaign</h3>
+                DC Agency Campaign Theme
+              </td>
+              <td>
+                <div class="form-item form-type-radio form-item-theme">
+                  <input
+                    type="radio"
+                    id="edit-theme--5"
+                    name="theme"
+                    value="dc_agency_campaign"
+                    class="form-radio"
+                  />
+                </div>
+              </td>
+              <td>
+                <a
+                  href="/admin/structure/domain/view/1192/theme/dc_agency_campaign/theme-settings"
+                ></a>
+              </td>
+            </tr>
+            <tr class="odd">
+              <td>
+                <img
+                  typeof="foaf:Image"
+                  src="https://config.dc.gov/sites/all/themes/dc_agency_mobile/screenshot.png"
+                  alt=""
+                />
+              </td>
+              <td>
+                <h3>dc_agency_mobile 7.2</h3>
+                DC agency theme.
+              </td>
+              <td>
+                <div class="form-item form-type-radio form-item-theme">
+                  <input
+                    type="radio"
+                    id="edit-theme--6"
+                    name="theme"
+                    value="dc_agency_mobile"
+                    class="form-radio"
+                  />
+                </div>
+              </td>
+              <td>
+                <a
+                  href="/admin/structure/domain/view/1192/theme/dc_agency_mobile/theme-settings"
+                ></a>
+              </td>
+            </tr>
+            <tr class="even">
+              <td>
+                <img
+                  typeof="foaf:Image"
+                  src="https://config.dc.gov/sites/all/themes/dc_agency_omega/screenshot.png"
+                  alt=""
+                />
+              </td>
+              <td>
+                <h3>DC Agency Omega Theme 7.x-3.1</h3>
+                DCGOV Responsive theme for agency websites
+              </td>
+              <td>
+                <div class="form-item form-type-radio form-item-theme">
+                  <input
+                    type="radio"
+                    id="edit-theme--7"
+                    name="theme"
+                    value="dc_agency_omega"
+                    class="form-radio"
+                  />
+                </div>
+              </td>
+              <td>
+                <a
+                  href="/admin/structure/domain/view/1192/theme/dc_agency_omega/theme-settings"
+                ></a>
+              </td>
+            </tr>
+            <tr class="odd">
+              <td>
+                <img
+                  typeof="foaf:Image"
+                  src="https://config.dc.gov/sites/all/themes/dc_agency_statehood/statehood.png"
+                  alt=""
+                />
+              </td>
+              <td>
+                <h3>dc_agency_statehood 1.x (default theme)</h3>
+                Responsive theme for MPD Missing Persons
+              </td>
+              <td>
+                <div class="form-item form-type-radio form-item-theme">
+                  <input
+                    type="radio"
+                    id="edit-theme--8"
+                    name="theme"
+                    value="dc_agency_statehood"
+                    checked="checked"
+                    class="form-radio"
+                  />
+                </div>
+              </td>
+              <td>
+                <a
+                  href="/admin/structure/domain/view/1192/theme/dc_agency_statehood/theme-settings"
+                ></a>
+              </td>
+            </tr>
+            <tr class="even">
+              <td>
+                <img
+                  typeof="foaf:Image"
+                  src="https://config.dc.gov/sites/all/themes/dc_dcps_agency/screenshot.png"
+                  alt=""
+                />
+              </td>
+              <td>
+                <h3>dc_dcps_agency 7.2</h3>
+                DCPS agency theme.
+              </td>
+              <td>
+                <div class="form-item form-type-radio form-item-theme">
+                  <input
+                    type="radio"
+                    id="edit-theme--9"
+                    name="theme"
+                    value="dc_dcps_agency"
+                    class="form-radio"
+                  />
+                </div>
+              </td>
+              <td>
+                <a
+                  href="/admin/structure/domain/view/1192/theme/dc_dcps_agency/theme-settings"
+                ></a>
+              </td>
+            </tr>
+            <tr class="odd">
+              <td>
+                <img
+                  typeof="foaf:Image"
+                  src="https://config.dc.gov/sites/all/themes/dc_entertainment_omega/screenshot.png"
+                  alt=""
+                />
+              </td>
+              <td><h3>DC Entertainment Omega 1.x</h3></td>
+              <td>
+                <div class="form-item form-type-radio form-item-theme">
+                  <input
+                    type="radio"
+                    id="edit-theme--10"
+                    name="theme"
+                    value="dc_entertainment_omega"
+                    class="form-radio"
+                  />
+                </div>
+              </td>
+              <td>
+                <a
+                  href="/admin/structure/domain/view/1192/theme/dc_entertainment_omega/theme-settings"
+                ></a>
+              </td>
+            </tr>
+            <tr class="even">
+              <td>
+                <img
+                  typeof="foaf:Image"
+                  src="https://config.dc.gov/sites/all/themes/dc_home_omega/screenshot.png"
+                  alt=""
+                />
+              </td>
+              <td>
+                <h3>dc_home_omega 7.x-3.1</h3>
+                DC Home Theme
+              </td>
+              <td>
+                <div class="form-item form-type-radio form-item-theme">
+                  <input
+                    type="radio"
+                    id="edit-theme--11"
+                    name="theme"
+                    value="dc_home_omega"
+                    class="form-radio"
+                  />
+                </div>
+              </td>
+              <td>
+                <a
+                  href="/admin/structure/domain/view/1192/theme/dc_home_omega/theme-settings"
+                ></a>
+              </td>
+            </tr>
+            <tr class="odd">
+              <td>
+                <img
+                  typeof="foaf:Image"
+                  src="https://config.dc.gov/sites/all/themes/dc_seven/screenshot.png"
+                  alt=""
+                />
+              </td>
+              <td>
+                <h3>dc_seven 7.7</h3>
+                DC tweaks of a simple one-column, tableless, fluid width
+                administration theme.
+              </td>
+              <td>
+                <div class="form-item form-type-radio form-item-theme">
+                  <input
+                    type="radio"
+                    id="edit-theme--12"
+                    name="theme"
+                    value="dc_seven"
+                    class="form-radio"
+                  />
+                </div>
+              </td>
+              <td>
+                <a
+                  href="/admin/structure/domain/view/1192/theme/dc_seven/theme-settings"
+                ></a>
+              </td>
+            </tr>
+            <tr class="even">
+              <td>
+                <img
+                  typeof="foaf:Image"
+                  src="https://config.dc.gov/sites/all/themes/genesis/genesis-base.png"
+                  alt=""
+                />
+              </td>
+              <td>
+                <h3>Genesis 7.x-1.1</h3>
+                An elegant, flexible and powerful starter theme by
+                <a href="http://adaptivethemes.com" class="ext" target="_blank"
+                  >Adaptivethemes</a
+                ><span class="ext"></span>.
+              </td>
+              <td>
+                <div class="form-item form-type-radio form-item-theme">
+                  <input
+                    type="radio"
+                    id="edit-theme--13"
+                    name="theme"
+                    value="genesis"
+                    class="form-radio"
+                  />
+                </div>
+              </td>
+              <td>
+                <a
+                  href="/admin/structure/domain/view/1192/theme/genesis/theme-settings"
+                ></a>
+              </td>
+            </tr>
+            <tr class="odd">
+              <td>
+                <img
+                  typeof="foaf:Image"
+                  src="https://config.dc.gov/sites/all/themes/genesis_dc/genesis-dc.png"
+                  alt=""
+                />
+              </td>
+              <td>
+                <h3>Genesis dc 7.x-1.1</h3>
+                DC Site Theme
+              </td>
+              <td>
+                <div class="form-item form-type-radio form-item-theme">
+                  <input
+                    type="radio"
+                    id="edit-theme--14"
+                    name="theme"
+                    value="genesis_dc"
+                    class="form-radio"
+                  />
+                </div>
+              </td>
+              <td>
+                <a
+                  href="/admin/structure/domain/view/1192/theme/genesis_dc/theme-settings"
+                ></a>
+              </td>
+            </tr>
+            <tr class="even">
+              <td>
+                <img
+                  typeof="foaf:Image"
+                  src="https://config.dc.gov/themes/seven/screenshot.png"
+                  alt=""
+                />
+              </td>
+              <td>
+                <h3>Seven 7.82</h3>
+                A simple one-column, tableless, fluid width administration
+                theme.
+              </td>
+              <td>
+                <div class="form-item form-type-radio form-item-theme">
+                  <input
+                    type="radio"
+                    id="edit-theme--15"
+                    name="theme"
+                    value="seven"
+                    class="form-radio"
+                  />
+                </div>
+              </td>
+              <td>
+                <a
+                  href="/admin/structure/domain/view/1192/theme/seven/theme-settings"
+                ></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

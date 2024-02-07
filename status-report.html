@@ -1,0 +1,513 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Taxonomy</title>
+    <style>
+      fieldset {
+        margin: 50px 0;
+      }
+      legend {
+        font-size: 30px;
+      }
+      .nav {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+
+      /**
+ * Tables.
+ */
+      table {
+        font-size: 0.923em;
+        margin: 0 0 10px;
+        border: 1px solid #bebfb9;
+        width: 100%;
+      }
+      table td,
+      table th {
+        vertical-align: middle;
+        padding: 8px 10px;
+        border: 0;
+        color: #000;
+      }
+      tr.even,
+      tr.odd {
+        border-width: 0 1px 0 1px;
+        border-style: solid;
+        border-color: #bebfb9;
+        background: #f3f4ee;
+      }
+      tr.odd {
+        background: #fff;
+      }
+      tr.drag {
+        background: #fe7;
+      }
+      tr.drag-previous {
+        background: #ffb;
+      }
+      table th {
+        text-transform: uppercase;
+        background: #e1e2dc;
+        font-weight: normal;
+        border-width: 1px;
+        border-style: solid;
+        border-color: #bebfb9;
+        padding: 3px 10px;
+      }
+      table th.active {
+        background: #bdbeb9;
+      }
+      table th a {
+        display: block;
+        position: relative;
+      }
+      table th.active a {
+        padding: 0 25px 0 0; /* LTR */
+      }
+      table th.active img {
+        position: absolute;
+        top: 3px;
+        right: 3px;
+      }
+      table td.active {
+        background: #e9e9dd;
+      }
+      table tr.odd td.active {
+        background: #f3f4ee;
+      }
+      table tr.selected td.active,
+      table tr.selected td {
+        background: #ffc;
+        border-color: #eeb;
+      }
+      table.system-status-report tr {
+        border-bottom: 1px solid #ccc;
+      }
+      table.system-status-report tr.ok {
+        color: #255b1e;
+        background-color: #e5ffe2;
+      }
+      table.system-status-report tr.info {
+        color: #040f37;
+        background-color: #bdf;
+      }
+      table.system-status-report tr.warning {
+        color: #840;
+        background-color: #fffce5;
+      }
+      table.system-status-report tr.error {
+        color: #8c2e0b;
+        background-color: #fef5f1;
+      }
+      /**
+ * Exception for webkit bug with the right border of the last cell
+ * in some tables, since it's webkit only, we can use :last-child
+ */
+      tr td:last-child {
+        border-right: 1px solid #bebfb9;
+      }
+      .element-invisible {
+        position: absolute !important;
+        clip: rect(1px 1px 1px 1px);
+        clip: rect(1px, 1px, 1px, 1px);
+        overflow: hidden;
+        height: 1px;
+      }
+
+      caption {
+        font-size: 20px;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="content" class="clearfix">
+      <div
+        class="nav"
+        style="
+          padding: 50px;
+          background-color: #f1eeee;
+          font-size: 20px;
+          text-align: center;
+        "
+      >
+        <a href="/Drupaltechspecs.html">Module Listing</a
+        ><a href="/permissions.html">Roles &amp; Permissions</a>
+        <a href="/taxonomy.html">Taxonomies</a>
+        <a href="/status-report.html"
+          >Environment Configuration & Integrations</a
+        ><a href="/text-formats.html">Text Formats</a>
+        <a href="/themes.html">Themes</a>
+      </div>
+
+      <div class="region region-content" style="padding: 50px">
+        <table class="system-status-report">
+          <tbody>
+            <tr class="info">
+              <td class="status-icon">
+                <div title="Info">
+                  <span class="element-invisible">Info</span>
+                </div>
+              </td>
+              <td class="status-title">Environment</td>
+              <td class="status-value">Acquia Cloud Platform</td>
+            </tr>
+            <tr class="info">
+              <td class="status-icon">
+                <div title="Info">
+                  <span class="element-invisible">Info</span>
+                </div>
+              </td>
+              <td class="status-title">Drupal</td>
+              <td class="status-value">7.82</td>
+            </tr>
+            <tr class="ok">
+              <td class="status-icon">
+                <div title="OK"><span class="element-invisible">OK</span></div>
+              </td>
+              <td class="status-title">Access to update.php</td>
+              <td class="status-value">Protected</td>
+            </tr>
+            <tr class="info">
+              <td class="status-icon">
+                <div title="Info">
+                  <span class="element-invisible">Info</span>
+                </div>
+              </td>
+              <td class="status-title">Acquia Purge</td>
+              <td class="status-value">
+                <b>State data location</b><br />memcache
+              </td>
+            </tr>
+            <tr class="info">
+              <td class="status-icon">
+                <div title="Info">
+                  <span class="element-invisible">Info</span>
+                </div>
+              </td>
+              <td class="status-title">Acquia Purge</td>
+              <td class="status-value"><b>Status</b><br />idle</td>
+            </tr>
+            <tr class="ok">
+              <td class="status-icon">
+                <div title="OK"><span class="element-invisible">OK</span></div>
+              </td>
+              <td class="status-title">CKEditor</td>
+              <td class="status-value">4.6.2</td>
+            </tr>
+            <tr class="ok">
+              <td class="status-icon">
+                <div title="OK"><span class="element-invisible">OK</span></div>
+              </td>
+              <td class="status-title">Configuration file</td>
+              <td class="status-value">Protected</td>
+            </tr>
+            <tr class="ok merge-down">
+              <td class="status-icon">
+                <div title="OK"><span class="element-invisible">OK</span></div>
+              </td>
+              <td class="status-title">Cron maintenance tasks</td>
+              <td class="status-value">Last run 3 hours 28 sec ago</td>
+            </tr>
+
+            <tr class="ok">
+              <td class="status-icon">
+                <div title="OK"><span class="element-invisible">OK</span></div>
+              </td>
+              <td class="status-title">CTools CSS Cache</td>
+              <td class="status-value">Exists</td>
+            </tr>
+            <tr class="info merge-down">
+              <td class="status-icon">
+                <div title="Info">
+                  <span class="element-invisible">Info</span>
+                </div>
+              </td>
+              <td class="status-title">Database 4 byte UTF-8 support</td>
+              <td class="status-value">Not enabled</td>
+            </tr>
+
+            <tr class="ok">
+              <td class="status-icon">
+                <div title="OK"><span class="element-invisible">OK</span></div>
+              </td>
+              <td class="status-title">Database system</td>
+              <td class="status-value">MySQL, MariaDB, or equivalent</td>
+            </tr>
+            <tr class="ok">
+              <td class="status-icon">
+                <div title="OK"><span class="element-invisible">OK</span></div>
+              </td>
+              <td class="status-title">Database system version</td>
+              <td class="status-value">5.7.40-43-log</td>
+            </tr>
+            <tr class="ok">
+              <td class="status-icon">
+                <div title="OK"><span class="element-invisible">OK</span></div>
+              </td>
+              <td class="status-title">Database updates</td>
+              <td class="status-value">Up to date</td>
+            </tr>
+            <tr class="ok merge-down">
+              <td class="status-icon">
+                <div title="OK"><span class="element-invisible">OK</span></div>
+              </td>
+              <td class="status-title">Date API</td>
+              <td class="status-value">System date settings</td>
+            </tr>
+
+            <tr class="ok">
+              <td class="status-icon">
+                <div title="OK"><span class="element-invisible">OK</span></div>
+              </td>
+              <td class="status-title">Domain Access</td>
+              <td class="status-value">
+                <div class="item-list">
+                  <ul>
+                    <li class="first last">Module installed correctly.</li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+            <tr class="ok">
+              <td class="status-icon">
+                <div title="OK"><span class="element-invisible">OK</span></div>
+              </td>
+              <td class="status-title">File system</td>
+              <td class="status-value">
+                Writable (<em>public</em> download method)
+              </td>
+            </tr>
+            <tr class="ok">
+              <td class="status-icon">
+                <div title="OK"><span class="element-invisible">OK</span></div>
+              </td>
+              <td class="status-title">GD library PNG support</td>
+              <td class="status-value">bundled (2.1.0 compatible)</td>
+            </tr>
+            <tr class="ok">
+              <td class="status-icon">
+                <div title="OK"><span class="element-invisible">OK</span></div>
+              </td>
+              <td class="status-title">
+                GD library rotate and desaturate effects
+              </td>
+              <td class="status-value">bundled (2.1.0 compatible)</td>
+            </tr>
+            <tr class="ok">
+              <td class="status-icon">
+                <div title="OK"><span class="element-invisible">OK</span></div>
+              </td>
+              <td class="status-title">jQuery Update</td>
+              <td class="status-value">
+                jQuery <em class="placeholder">1.8.3</em> (<!--<a
+                  href="/admin/config/development/jquery_update"
+                  >configure</a
+                >) and jQuery UI <em class="placeholder">1.10.2</em>
+              </td>
+            </tr>
+            <tr class="ok">
+              <td class="status-icon">
+                <div title="OK"><span class="element-invisible">OK</span></div>
+              </td>
+              <td class="status-title">Memcache</td>
+              <td class="status-value">
+                3.2.0 (<!--<a href="/admin/reports/memcache">more information</a>-->)
+              </td>
+            </tr>
+            <tr class="info merge-down">
+              <td class="status-icon">
+                <div title="Info">
+                  <span class="element-invisible">Info</span>
+                </div>
+              </td>
+              <td class="status-title">Metatag</td>
+              <td class="status-value">
+                The Imagecache Token module is recommended.
+              </td>
+            </tr>
+
+            <tr class="warning merge-down">
+              <td class="status-icon">
+                <div title="Warning">
+                  <span class="element-invisible">Warning</span>
+                </div>
+              </td>
+              <td class="status-title">Metatag</td>
+              <td class="status-value">Token module is out of date.</td>
+            </tr>
+
+            <tr class="info merge-down">
+              <td class="status-icon">
+                <div title="Info">
+                  <span class="element-invisible">Info</span>
+                </div>
+              </td>
+              <td class="status-title">Metatag</td>
+              <td class="status-value">
+                Workbench Moderation module is out of date.
+              </td>
+            </tr>
+            <tr class="info merge-up">
+              <td colspan="3" class="status-description">
+                It is recommended to use
+                <!--<a
+                  href="https://www.drupal.org/project/workbench_moderation"
+                  class="ext"
+                  target="_blank"
+                  >Workbench Moderation module</a
+                >--><span class="ext"></span> v7.x-3.0 or newer.
+              </td>
+            </tr>
+            <tr class="info merge-down">
+              <td class="status-icon">
+                <div title="Info">
+                  <span class="element-invisible">Info</span>
+                </div>
+              </td>
+              <td class="status-title">Metatag</td>
+              <td class="status-value">
+                The Transliteration module is recommended.
+              </td>
+            </tr>
+            <tr class="info merge-up">
+              <td colspan="3" class="status-description">
+                It is recommended to install the
+                <!--<a
+                  href="https://drupal.org/project/transliteration"
+                  class="ext"
+                  target="_blank"
+                  >Transliteration module</a
+                >--><span class="ext"></span> to clean up filenames of uploaded
+                files that may be used with image meta tags.
+              </td>
+            </tr>
+            <tr class="ok merge-down">
+              <td class="status-icon">
+                <div title="OK"><span class="element-invisible">OK</span></div>
+              </td>
+              <td class="status-title">Node Access Permissions</td>
+              <td class="status-value">345722 permissions in use</td>
+            </tr>
+
+            <tr class="ok">
+              <td class="status-icon">
+                <div title="OK"><span class="element-invisible">OK</span></div>
+              </td>
+              <td class="status-title">OAuth</td>
+              <td class="status-value">cURL library Enabled</td>
+            </tr>
+            <tr class="ok">
+              <td class="status-icon">
+                <div title="OK"><span class="element-invisible">OK</span></div>
+              </td>
+              <td class="status-title">PHP</td>
+              <td class="status-value">
+                7.4.33 (<!--<a href="/admin/reports/status/php">more information</a
+                >-->)
+              </td>
+            </tr>
+            <tr class="ok">
+              <td class="status-icon">
+                <div title="OK"><span class="element-invisible">OK</span></div>
+              </td>
+              <td class="status-title">PHP extensions</td>
+              <td class="status-value">Enabled</td>
+            </tr>
+            <tr class="ok">
+              <td class="status-icon">
+                <div title="OK"><span class="element-invisible">OK</span></div>
+              </td>
+              <td class="status-title">PHP memory limit</td>
+              <td class="status-value">402653184</td>
+            </tr>
+            <tr class="ok">
+              <td class="status-icon">
+                <div title="OK"><span class="element-invisible">OK</span></div>
+              </td>
+              <td class="status-title">PHP register globals</td>
+              <td class="status-value">Disabled</td>
+            </tr>
+            <tr class="ok">
+              <td class="status-icon">
+                <div title="OK"><span class="element-invisible">OK</span></div>
+              </td>
+              <td class="status-title">phpFlickr library</td>
+              <td class="status-value">phpFlickr library installed</td>
+            </tr>
+            <tr class="ok">
+              <td class="status-icon">
+                <div title="OK"><span class="element-invisible">OK</span></div>
+              </td>
+              <td class="status-title">Unicode library</td>
+              <td class="status-value">PHP Mbstring Extension</td>
+            </tr>
+            <tr class="warning merge-down">
+              <td class="status-icon">
+                <div title="Warning">
+                  <span class="element-invisible">Warning</span>
+                </div>
+              </td>
+              <td class="status-title">Update notifications</td>
+              <td class="status-value">Not enabled</td>
+            </tr>
+
+            <tr class="info merge-down">
+              <td class="status-icon">
+                <div title="Info">
+                  <span class="element-invisible">Info</span>
+                </div>
+              </td>
+              <td class="status-title">Upload progress</td>
+              <td class="status-value">Not enabled</td>
+            </tr>
+
+            <tr class="ok">
+              <td class="status-icon">
+                <div title="OK"><span class="element-invisible">OK</span></div>
+              </td>
+              <td class="status-title">
+                Views Data Export temporary directory
+              </td>
+              <td class="status-value">Exists</td>
+            </tr>
+            <tr class="ok">
+              <td class="status-icon">
+                <div title="OK"><span class="element-invisible">OK</span></div>
+              </td>
+              <td class="status-title">Web server</td>
+              <td class="status-value">Apache</td>
+            </tr>
+            <tr class="ok">
+              <td class="status-icon">
+                <div title="OK"><span class="element-invisible">OK</span></div>
+              </td>
+              <td class="status-title">XML sitemap</td>
+              <td class="status-value">
+                Last attempted generation on Mon, 02/05/2024 - 7:00pm (1 day 15
+                hours ago).
+              </td>
+            </tr>
+            <tr class="ok">
+              <td class="status-icon">
+                <div title="OK"><span class="element-invisible">OK</span></div>
+              </td>
+              <td class="status-title">XML sitemap cache directory</td>
+              <td class="status-value">Writable</td>
+            </tr>
+            <tr class="ok">
+              <td class="status-icon">
+                <div title="OK"><span class="element-invisible">OK</span></div>
+              </td>
+              <td class="status-title">XML sitemap maximum file size</td>
+              <td class="status-value">1.57 MB</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
